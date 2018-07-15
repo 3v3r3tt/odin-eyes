@@ -1,0 +1,306 @@
+// Dimensions
+$prism-height: 450px;
+$prism-length: 450px;
+$prism-depth: $prism-length;
+$spacing: 26px;
+$br: 3px;
+
+// Colors
+$text-light: #fff;
+$text-dark: #666;
+$smoke: #f9f9fa;
+$coral: #ff5751;
+$navy-blue: #42509e;
+$green: #07ad90;
+$black: #35383E;
+$blue: #5bc0de;
+$gold: #c39357;
+$gray-main: #84878a;
+$gray-light: #afb0b1;
+$gray-dark: #696b6f;
+
+.jumbotron {
+  background-color: none !important;
+}
+
+.entry-logo {
+  position: absolute;
+  left: 8px;
+  top: 16px;
+
+  img {
+    width: 420px;
+  }
+}
+
+.entry-icon {
+  text-align: center;
+
+  img {
+    width: 75px;
+  }
+}
+
+.entry-brand {
+  text-align: center;
+  img {
+    width: 300px;
+  }
+}
+
+*{
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body{
+  font-size: 14px;
+  text-align: center;
+  background-color: #84878a;
+  background: radial-gradient($gray-light 5%, $black 90%);
+}
+
+.wrapper{
+  width: $prism-length;
+  height: $prism-height;
+  margin: 180px auto 0 auto;
+  perspective: 600px;
+  text-align: left;
+}
+
+.rec-prism {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 0.5s ease-in;
+}
+
+.face {
+  position: absolute;
+  width: $prism-length;
+  height: $prism-height;
+  padding: 20px;
+  background: rgba(53,56,62,0.98);
+  border: 2px solid $blue;
+  border-radius: 8px;
+
+  .content{
+    color: $text-dark;
+    h2{
+      color: $blue;
+      text-align: center;
+      margin: 0 0 $spacing/3 0;
+    }
+    .btn{
+      margin: 0 24px;
+      width: 100px;
+    }
+    .field-wrapper{
+      margin-top: $spacing*1.5;
+      position: relative;
+
+      label{
+        position: absolute;
+        pointer-events: none;
+        font-size: 0.85em;
+        top: 40%;
+        left: 0;
+        transform: translateY(-50%);
+        transition: all ease-in 0.25s;
+        color: lighten($text-dark, 20%);
+      }
+      input[type="text"], input[type="password"], input[type="submit"], textarea{
+        -webkit-appearance: none;
+        appearance: none;
+        &:focus{
+          outline: none;
+        }
+      }
+      input[type="text"], input[type="password"], textarea{
+        width: 100%;
+        border: none;
+        background: transparent;
+        line-height: 2em;
+        border-bottom: 1px solid $black;
+        color: $text-dark;
+
+        &::-webkit-input-placeholder{
+          opacity: 0;
+        }
+        &::-moz-placeholder{
+          opacity: 0;
+        }
+        &:-ms-input-placeholder{
+          opacity: 0;
+        }
+        &:-moz-placeholder {
+          opacity: 0;
+        }
+        &:focus, &:not(:placeholder-shown){
+          + label{
+            top: -35%;
+            color: $navy-blue;
+          }
+        }
+      }
+      input[type="submit"]{
+        -webkit-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        width: 100%;
+        background: $black;
+        line-height: 2em;
+        color: $text-light;
+        border: 1px solid $black;
+        border-radius: $br;
+        padding: $spacing/4;
+
+        &:hover{
+          opacity: 0.9;
+        }
+        &:active{
+          transform: scale(0.96);
+        }
+      }
+      textarea{
+        resize: none;
+        line-height: 1em;
+        &:focus, &:not(:placeholder-shown){
+          + label{
+            top: -25%;
+          }
+        }
+      }
+    }
+  }
+
+  .thank-you-msg{
+    position: absolute;
+    width: 200px;
+    height: 130px;
+    text-align: center;
+    font-size: 2em;
+    color: $gold;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+
+    &:after{
+      position: absolute;
+      content: '';
+      width: 50px;
+      height: 25px;
+      border: 10px solid $gold;
+      border-right: 0;
+      border-top: 0;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(0);
+      transform: translate(-50%, -50%) rotate(0deg) scale(0);
+      -webkit-animation: success ease-in 0.15s forwards;
+      animation: success ease-in 0.15s forwards;
+      animation-delay: 2.5s;
+    }
+  }
+  &-front{
+    transform: rotateY(0deg) translateZ($prism-length/2);
+  }
+  &-top{
+    height: $prism-depth;
+    transform: rotateX(90deg) translateZ($prism-depth/2);
+  }
+  &-back{
+    transform: rotateY(180deg) translateZ($prism-length/2);
+  }
+  &-right{
+    transform: rotateY(90deg) translateZ($prism-length/2);
+  }
+  &-left{
+    transform: rotateY(-90deg) translateZ($prism-length/2);
+  }
+  &-bottom{
+    height: $prism-depth;
+    transform: rotateX(-90deg) translateZ($prism-height - ($prism-depth/2));
+  }
+}
+
+.nav{
+  padding: 0;
+  position: absolute;
+  bottom: 2px;
+
+  li{
+    display: inline-block;
+    list-style-type: none;
+    font-size: 1em;
+    margin: 0 20px;
+    color: $gold;
+    position: relative;
+    cursor: pointer;
+    &:after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 20px;
+      border-bottom: 1px solid $gold;
+      transition: all ease-in 0.25s;
+    }
+    &:hover:after{
+      width: 100%;
+    }
+  }
+}
+
+.signup, .login, .contact {
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  .help-block {
+    margin: 0;
+  }
+}
+
+.contact {
+  textarea {
+    height: 100px;
+  }
+}
+
+small{
+  font-size: 0.7em;
+}
+@-webkit-keyframes success{
+    from {
+       -webkit-transform: translate(-50%, -50%) rotate(0) scale(0);
+       }
+    to {
+      -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+    }
+}
+
+$blue: #5bc0de;
+
+.home-logo {
+  text-align: center;
+
+  img {
+    width: 300px
+  }
+}
+
+a {
+  color: $blue;
+
+  &:hover {
+    cursor: pointer;
+    color: $blue;
+    text-decoration-color: $blue
+  }
+}
