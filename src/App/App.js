@@ -33,7 +33,7 @@ class App extends React.Component {
         <Router history={history}>
           <div>
             <PrivateRoute exact path="/" component={HomePage} />
-            <Route path="/login" component={EntryPage} />
+            <Route path="/entry" component={EntryPage} />
           </div>
         </Router>
       </div>
