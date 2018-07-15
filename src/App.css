@@ -201,7 +201,8 @@ body {
     .entry-brand img {
       width: 175px; }
   body {
-    font-size: 12px; }
+    font-size: 12px;
+    margin-bottom: 25px !important; }
   .wrapper {
     width: 275px;
     height: 420px;
@@ -343,4 +344,13 @@ a {
   a:hover {
     cursor: pointer;
     color: #5bc0de;
-    text-decoration-color: #5bc0de; }
+    text-decoration-color: #5bc0de;
+  }
+
+.alert-container {
+  margin-top: 80px;
+}
+
+.alert-container .alert {
+  padding: 5px;
+}

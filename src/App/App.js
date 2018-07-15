@@ -24,7 +24,7 @@ class App extends React.Component {
     return (
       <div className="container">
         { alert.message
-          ? <div className='col-xs-6 col-xs-offset-3'>
+          ? <div className='col-xs-6 col-xs-offset-3 alert-container'>
               <div className={`alert ${alert.type}`}>{alert.message}</div>
             </div>
           : null
