@@ -67,26 +67,6 @@ body{
     animation-delay: 2.5s;
   }
 }
-&-front{
-  transform: rotateY(0deg) translateZ($prism-length/2);
-}
-&-top{
-  height: $prism-depth;
-  transform: rotateX(90deg) translateZ($prism-depth/2);
-}
-&-back{
-  transform: rotateY(180deg) translateZ($prism-length/2);
-}
-&-right{
-  transform: rotateY(90deg) translateZ($prism-length/2);
-}
-&-left{
-  transform: rotateY(-90deg) translateZ($prism-length/2);
-}
-&-bottom{
-  height: $prism-depth;
-  transform: rotateX(-90deg) translateZ($prism-height - ($prism-depth/2));
-}
 
 @media (min-width: 600px) {
   $prism-height: 450px;
@@ -141,6 +121,27 @@ body{
     background: rgba(53,56,62,0.98);
     border: 2px solid $blue;
     border-radius: 8px;
+
+    &-front{
+      transform: rotateY(0deg) translateZ($prism-length/2);
+    }
+    &-top{
+      height: $prism-depth;
+      transform: rotateX(90deg) translateZ($prism-depth/2);
+    }
+    &-back{
+      transform: rotateY(180deg) translateZ($prism-length/2);
+    }
+    &-right{
+      transform: rotateY(90deg) translateZ($prism-length/2);
+    }
+    &-left{
+      transform: rotateY(-90deg) translateZ($prism-length/2);
+    }
+    &-bottom{
+      height: $prism-depth;
+      transform: rotateX(-90deg) translateZ($prism-height - ($prism-depth/2));
+    }
 
     .content{
       color: $text-dark;
@@ -331,6 +332,27 @@ body{
     background: rgba(53,56,62,0.98);
     border: 2px solid $blue;
     border-radius: 8px;
+
+    &-front{
+      transform: rotateY(0deg) translateZ($prism-length/2);
+    }
+    &-top{
+      height: $prism-depth;
+      transform: rotateX(90deg) translateZ($prism-depth/2);
+    }
+    &-back{
+      transform: rotateY(180deg) translateZ($prism-length/2);
+    }
+    &-right{
+      transform: rotateY(90deg) translateZ($prism-length/2);
+    }
+    &-left{
+      transform: rotateY(-90deg) translateZ($prism-length/2);
+    }
+    &-bottom{
+      height: $prism-depth;
+      transform: rotateX(-90deg) translateZ($prism-height - ($prism-depth/2));
+    }
 
     .content{
       color: $text-dark;
