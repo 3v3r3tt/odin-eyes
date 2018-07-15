@@ -7,7 +7,7 @@ import { ForgotPasswordForm } from './ForgotPasswordForm'
 import { Brand } from './Brand'
 import { Thanks } from './Thanks'
 
-import '../app.scss'
+import '../app.css'
 import logo from '../_assets/images/1x/logo-rectangle.png'
 
 import { userActions } from '../_actions'
